@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   before do
     @user = FactoryBot.build(:user)
   end
@@ -22,5 +21,4 @@ RSpec.describe User, type: :model do
     user.valid?
     expect(user.errors[:email]).to include("が入力されていません。")
   end
-
 end
