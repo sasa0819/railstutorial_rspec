@@ -1,12 +1,21 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <%= link_to "Diver SNS", root_path, id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",  root_path %></li>
-            <li><%= link_to "Help",  helf_path %></li>
-            <li><%= link_to "Login", '#' %></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+  <div class="container">
+    <%= link_to "Diver SNS", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "ユーザー一覧", users_path %></li>
+          <li><%= link_to "Help", helf_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "Mypage", mypage_path(current_user) %></li>
+          <li><%= link_to "ユーザー編集", edit_user_registration_path %>
+        <% else %>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Help", helf_path %></li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
