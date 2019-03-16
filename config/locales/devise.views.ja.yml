@@ -23,10 +23,16 @@ ja:
               confirmation:                                    "が内容とあっていません。"
     attributes:
       user:
+        name:
+                  "名前"
         username:
                   "ユーザーネーム"
         current_password:                                      "現在のパスワード"
         email:                                                 "メールアドレス"
+        introduce:
+                  "自己紹介"
+        phone:
+                  "電話番号"
         password:                                              "パスワード"
         password_confirmation:                                 "確認用パスワード"
         remember_me:                                           "ログインを記憶"
