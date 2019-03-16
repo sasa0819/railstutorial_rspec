@@ -5,10 +5,12 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
+gem 'rails-i18n'
 gem 'bootstrap-sass', '3.3.7'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'database_rewinder'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~>1.3.6'
 # Use Puma as the app server
@@ -44,6 +46,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.6.0'
+  gem "factory_bot_rails", "~> 4.10.0"
+  gem 'rubocop-airbnb'
 end
 
 group :development do

@@ -1,9 +1,13 @@
+#diviseのエラー文カスタマイズ
 ja:
   activerecord:
     errors:
       models:
         user:
           attributes:
+            username:
+              taken:                                           "は既に使用されています。"
+              blank:                                           "が入力されていません。"
             email:
               taken:                                           "は既に使用されています。"
               blank:                                           "が入力されていません。"
@@ -19,6 +23,8 @@ ja:
               confirmation:                                    "が内容とあっていません。"
     attributes:
       user:
+        username:
+                  "ユーザーネーム"
         current_password:                                      "現在のパスワード"
         email:                                                 "メールアドレス"
         password:                                              "パスワード"
