@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
   describe 'GET /index' do
-    let(:user) { create:user }
+    let(:user) { create :user }
 
     it "リクエストが成功すること" do
       sign_in user
@@ -25,20 +25,18 @@ RSpec.describe "Users", type: :request do
 
   describe 'GET/show' do
     context 'ユーザーが存在する場合'
-      let(:user) { create:user }
+    let(:user) { create :user }
 
-      it "リクエストが成功すること" do
-        sign_in user
-        get mypage_url user.id
-        expect(response.status).to eq 200
-      end
-
-      it "ユーザー名が表示されていること" do
-        sign_in user
-        get mypage_url user.id
-        expect(response.body).to include 'sasa'
-      end
+    it "リクエストが成功すること" do
+      sign_in user
+      get mypage_url user.id
+      expect(response.status).to eq 200
     end
 
-    
+    it "ユーザー名が表示されていること" do
+      sign_in user
+      get mypage_url user.id
+      expect(response.body).to include 'sasa'
+    end
+  end
 end
