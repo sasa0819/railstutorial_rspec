@@ -6,9 +6,30 @@
         <%= gravatar_for @user %>
         <%= @user.username %>
       </h1>
-        <% unless @user.introduce.nil? %>
-          <p><%= @user.introduce %></p>
-        <% end %>
+      <% unless @user.introduce.nil? %>
+      <p><%= @user.introduce %></p>
+      <% end %>
     </section>
   </aside>
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+    <h3>Microposts(<%= @user.microposts.count %>)</h3>
+    <ol class="microposts">
+      <!-- リファクタリングできる -->
+      <% @microposts.each do |micropost| %>
+      <li id="micropost-<%= micropost.id%>">
+        <%= link_to gravatar_for(micropost.user, size: 50) %>
+        <span class="user"><%= link_to micropost.user.username %></span>
+        <span class="content"><%= micropost.content %></span>
+        <span class="timestamp">
+          <%= time_ago_in_words(micropost.created_at) %>
+          前に投稿されました。
+          <!-- current_userの時のみ削除のリンクがでる -->
+        </span>
+      </li>
+      <% end %>
+    </ol>
+    <%= will_paginate @microposts %>
+    <% end %>
+  </div>
 </div>

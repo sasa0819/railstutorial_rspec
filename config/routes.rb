@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
   }
   resources :users, only: [:index]
+  resources :microposts
   get "users/:id" => "users#show", as: :mypage
   root 'toppages#home'
   get '/help', to: 'toppages#help', as: 'helf'

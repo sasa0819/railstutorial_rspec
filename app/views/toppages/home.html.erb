@@ -1,7 +1,18 @@
-<div class="center jumbotron">
-<h1>Diver SNS</h1>
-<h2>
-  ダイビング好きによる情報交換型SNSサイトです.
-</h2>
-  <%= link_to "さっそく登録!", new_user_registration_path, class:"btn btn-lg btn-primary" %>
-</div>
+<% if user_signed_in? %>
+  <div class="col-md-8">
+    <h3>投稿一覧</h3>
+    <% if @feed_items.any? %>
+      <ol class="microposts">
+        <h4></h4>
+      </ol>
+  </div>
+    <% end %>
+<% else %>
+  <div class="center jumbotron">
+  <h1>Diver SNS</h1>
+  <h2>
+    ダイビング好きによる情報交換型SNSサイトです.
+  </h2>
+    <%= link_to "さっそく登録!", new_user_registration_path, class:"btn btn-lg btn-primary" %>
+  </div>
+<% end %>
