@@ -9,6 +9,7 @@ gem 'rails-i18n'
 gem 'faker', '1.7.3'
 gem 'mini_magick', '4.7.0'
 gem 'bootstrap-sass', '3.3.7'
+gem "aws-sdk-s3", require: false
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'devise'
