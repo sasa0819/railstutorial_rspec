@@ -11,8 +11,12 @@
       <p><%= @user.introduce %></p>
       <% end %>
     </section>
+    <section class="stats">
+      <%= render 'shared/stats', user: @user %>
+    </section>
   </aside>
-  <ol class="col-md-8">
+  <div class="col-md-8">
+    <%= render 'follow_form', user: @user %>
     <% if @user.microposts.any? %>
     <h3>Microposts(<%= @user.microposts.count %>)</h3>
     <div class="microposts">
@@ -20,7 +24,7 @@
       <%# <% @microposts.each do |micropost| %>
       <%# <%= render micropost %>
       <%# <% end %>
-    </ol>
+    </div>
     <%= will_paginate @microposts %>
     <% end %>
   </div>
