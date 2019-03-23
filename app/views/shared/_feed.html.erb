@@ -1,0 +1,7 @@
+<% if @feed_items.any? %>
+  <ol class="microposts">
+    <%= render @feed_items %>
+    <%# @feed_items = micropostの集合
+    _micropostが呼び出される %>
+  </ol>
+<% end %>

@@ -1,3 +1,4 @@
+<%= render 'layouts/flash_messages' %>
 <%= provide(:title, 'Mypage') %>
 <div class="row">
   <aside class="col-md-4">
@@ -6,9 +7,21 @@
         <%= gravatar_for @user %>
         <%= @user.username %>
       </h1>
-        <% unless @user.introduce.nil? %>
-          <p><%= @user.introduce %></p>
-        <% end %>
+      <% unless @user.introduce.nil? %>
+      <p><%= @user.introduce %></p>
+      <% end %>
     </section>
   </aside>
+  <ol class="col-md-8">
+    <% if @user.microposts.any? %>
+    <h3>Microposts(<%= @user.microposts.count %>)</h3>
+    <div class="microposts">
+      <%= render @microposts %>
+      <%# <% @microposts.each do |micropost| %>
+      <%# <%= render micropost %>
+      <%# <% end %>
+    </ol>
+    <%= will_paginate @microposts %>
+    <% end %>
+  </div>
 </div>
