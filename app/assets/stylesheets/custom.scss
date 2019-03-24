@@ -1,8 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* mixins, variables, etc. */
-
 $gray-medium-light: #eaeaea;
 
 @mixin box_sizing {
@@ -10,8 +8,6 @@ $gray-medium-light: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-/* universal */
 
 body {
   padding-top: 60px;
@@ -31,8 +27,6 @@ textarea {
     margin-bottom: 10px;
   }
 }
-
-/* typography */
 
 h1,
 h2,
@@ -64,8 +58,6 @@ p {
   line-height: 1.7em;
 }
 
-/* header */
-
 #logo {
   float: left;
   margin-right: 10px;
@@ -80,8 +72,6 @@ p {
     text-decoration: none;
   }
 }
-
-/* footer */
 
 footer {
   margin-top: 45px;
@@ -107,8 +97,6 @@ footer {
   }
 }
 
-/* miscellaneous */
-
 .debug_dump {
   clear: both;
   float: left;
@@ -116,8 +104,6 @@ footer {
   margin-top: 45px;
   @include box_sizing;
 }
-
-/* sidebar */
 
 aside {
   section.user_info {
@@ -154,8 +140,6 @@ aside {
   margin-top: 15px;
 }
 
-/* Users index */
-
 .users {
   list-style: none;
   margin: 0;
@@ -165,8 +149,6 @@ aside {
     border-bottom: 1px solid $gray-lighter;
   }
 }
-
-/* microposts */
 
 .microposts {
   list-style: none;

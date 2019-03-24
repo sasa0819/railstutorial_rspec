@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Sign up' do
-  scenario "ユーザー登録を行い、ログインする" do
+  scenario "ユーザー登録を行う" do
     visit root_path
     expect(page).to have_http_status :ok
 

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "Toppages", type: :feature do
-  scenario "user move links" do
+RSpec.feature "Go to link", type: :feature do
+  scenario "リンクを行き来する" do
     visit root_path
     click_link "Help"
 
@@ -11,6 +11,5 @@ RSpec.feature "Toppages", type: :feature do
     click_link "Home"
 
     expect(page).to have_content "Diver SNS"
-    expect(page).to have_title "Diver SNS"
   end
 end
