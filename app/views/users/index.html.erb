@@ -1,15 +1,12 @@
 <%= provide(:title, 'ユーザー一覧') %>
 <h1>ユーザー一覧</h1>
-
 <%= will_paginate %>
-
 <ul class="users">
   <%= render @users %>
-  <%# <% @users.each do |user| %> 
+  <%# <% @users.each do |user| %>
   <%# <%= render user %>
   <%# <% end %>
   <%# renderにモデルのオブジェクトを渡した時の挙動 %>
   <%# app/views/users/_user.html.erb %>
 </ul>
-
 <%= will_paginate %>
