@@ -15,6 +15,8 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'database_rewinder'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~>1.3.6'
