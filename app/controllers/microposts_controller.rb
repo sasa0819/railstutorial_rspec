@@ -1,6 +1,9 @@
 class MicropostsController < ApplicationController
   before_action :authenticate_user!
 
+  def show
+  end
+
   def new
     @micropost = current_user.microposts.build
   end
