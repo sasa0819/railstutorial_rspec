@@ -34,5 +34,5 @@ Devise.setup do |config|
 
   config.sign_out_via = :delete
 
-
+   config.omniauth :facebook, '369759043617236', '22b2d8997c6eae9976814c7b70b9490f', scope: 'email', info_fields: 'email, username'
 end
