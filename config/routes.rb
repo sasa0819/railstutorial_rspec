@@ -11,7 +11,9 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :microposts
+  resources :microposts do
+    resources :comments, only: [:create]
+  end
   resources :relationships, only: [:create, :destroy]
   get "users/:id" => "users#show", as: :mypage
   root 'toppages#home'
