@@ -10,6 +10,7 @@
           前に投稿されました。
       <%= link_to '詳細', micropost_path(micropost) %>
       <%= link_to "お気に入りに登録", like_micropost_path(micropost), method: :post %>
+      <%= link_to "お気に入り解除", favorite_path(micropost), method: :delete %>
       <% if current_user.id == micropost.user_id %>
         <%= link_to '削除する' , micropost, method: :delete, data: { confirm: "本当に削除しますか？"}  %>
       <% end %>

@@ -11,6 +11,10 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-
+    @micropost_id = Micropost.find(params[:id]).id
+    @favorite = Favorite.find_by(micropost_id: @micropost_id)
+    if @favorite.destroy
+      redirect_to root_path
+    end
   end
 end
