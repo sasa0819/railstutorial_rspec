@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
   resources :microposts do
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
   get "users/:id" => "users#show", as: :mypage

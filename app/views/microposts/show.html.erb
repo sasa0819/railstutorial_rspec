@@ -1,5 +1,19 @@
+<%= render 'layouts/flash_messages' %>
 <%= provide(:title, '写真個別') %>
 <h1>写真個別ページ</h1>
 <div class="microposts">
   <%= render @micropost %>
 </div>
+<% if @micropost.comments.any? %>
+  <div class="comments">
+    <h2>コメント</h2>
+    <% @micropost.comments.each do |comment|  %>
+      <li id="comment-<%= comment.id %>">
+      <span class="content"><%= comment.content %></span>
+      </span>
+      </li>
+    <% end %>
+  </div>
+<% end %>
+<h2>コメントを追加</h2>
+<%= render 'shared/comment_form' %>

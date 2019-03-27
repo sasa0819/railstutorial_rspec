@@ -10,6 +10,11 @@
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           <li><%= link_to "Mypage", mypage_path(current_user) %></li>
           <li><%= link_to "ユーザー編集", edit_user_registration_path %>
+          <li><%= search_form_for @search, url: microposts_path do |f| %>
+            <%= f.text_field :content_cont, placeholder: 'テキスト検索' %>
+            <%= f.submit ("検索"), class: "search_btn "%>
+            <% end %>
+          </li>
         <% else %>
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", helf_path %></li>

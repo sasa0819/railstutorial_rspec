@@ -1,0 +1,8 @@
+<h1>検索結果</h1>
+<% if @search_microposts.any? %>
+ <% @search_microposts.each do |micropost| %>
+   <p><%= micropost.content %></p>
+ <% end %>
+ <% else %>
+ <h1>検索結果はありません</h1>
+<% end %>

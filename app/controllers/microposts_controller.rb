@@ -1,8 +1,13 @@
 class MicropostsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+  end
+
+
   def show
     @micropost = Micropost.find(params[:id])
+    @comment = @micropost.comments.build(user_id: current_user.id)
   end
 
   def new
