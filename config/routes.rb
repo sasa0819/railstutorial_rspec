@@ -12,8 +12,12 @@ Rails.application.routes.draw do
     end
   end
   resources :microposts do
+    member do
+      post "like", to: "favorites#create"
+    end
     resources :comments, only: [:create, :destroy]
   end
+  resources :favorites, only: [:destroy]
   resources :relationships, only: [:create, :destroy]
   get "users/:id" => "users#show", as: :mypage
   root 'toppages#home'
